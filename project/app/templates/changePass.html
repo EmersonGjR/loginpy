@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form name="changeP" id="formChange" method="post" action="/changed/" >
+    <div class="cool-6 mt-4 m-auto">
+        {% if msg %}
+            <div class="alert {{class}}">
+                {{msg}}
+            </div>
+        {% endif %}
+        {% csrf_token %}
+        
+        <input class="form-control mt-4 "type="password" name="password1" id="password1" placeholder="Nova Senha: ">
+        <input class="form-control mt-4 "type="password" name="password-conf1" id="password-conf1" placeholder="Repita a Senha: ">
+        
+        <input class="btn btn-primary mt-4 "type="submit" value="Confirmar">
+
+    </div>
+</form>
+
+{% endblock %}
